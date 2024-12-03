@@ -1,0 +1,25 @@
+{% extends "common_page.html" %}
+{% block title %} Login {% endblock title %}
+
+{% block body_content %}
+
+<div>
+    <div class="row">
+       <div class='col-3'></div>
+       <div class="col-md-6 col-12 col-offset-3">
+            <form method="post" class="mt-4">
+               {% csrf_token %}
+               {% load bootstrap %}
+               {{form |  bootstrap_horizontal:'col-lg-6'}}
+               <div class="d-flex justify-content-center">
+              <center> <input type="submit" class="bc-white mt-2 ml-2 me-3 loginbutton" value="login"> 
+               <a href="{% url 'password_reset' %}" class="date text-primary mt-5 ml-1 ">Forgot password?</a></center>
+               </div>
+        </form>
+
+      </div>
+      </div>
+      <div class="col-3"></div>
+</div>
+
+{% endblock body_content%}
